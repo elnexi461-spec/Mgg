@@ -1,0 +1,38 @@
+# Sensitive files
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+config.json
+secrets.json
+tokens.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Node modules (if ever added)
+node_modules/
+
+# Build artifacts (if ever added)
+dist/
+build/
+.cache/
+
+# Agent/temporary files
+.agents/
+.tmp/
+.store/
