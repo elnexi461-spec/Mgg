@@ -128,6 +128,8 @@ const Icons = {
   alertCircle: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`,
   copy: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`,
   externalLink: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>`,
+  moon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+  sun: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`,
 };
 
 // ============================================
@@ -344,6 +346,27 @@ function renderHome(container) {
         </div>
       </div>
     </section>
+
+    <section class="section" style="background:linear-gradient(135deg, var(--navy) 0%, #2a1a1a 100%);color:white">
+      <div class="container">
+        <div class="section-header" style="color:white">
+          <h2 style="color:white">Leadership</h2>
+          <p style="color:rgba(255,255,255,0.7)">Meet the team behind MGOLD GT Ltd</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;max-width:800px;margin:0 auto">
+          <div style="text-align:center">
+            <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:3px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,0.3)">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Riffat Zakaria" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='var(--gold)'">
+            </div>
+            <h3 style="color:var(--gold);margin-bottom:0.25rem">Riffat Zakaria</h3>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:1rem">Managing Director</p>
+            <p style="color:rgba(255,255,255,0.8);line-height:1.7;font-size:0.95rem">
+              He is a Managing Director of a well-known established wholesale company MGOLD GT Ltd based in London, UK. He is also a Director of MGOLD General Trading LLC which is based in Dubai-UAE. Both the companies, in their respective areas, specialise in the wholesale of Edible oil, Vegetable oil, Sunflower oil, Olive oil, Mineral water, Condensed milk, Evaporated milk, Tea, Spices, Soft drinks, Milk powder, Sugar, Salt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   `;
 }
 
@@ -455,7 +478,7 @@ function renderProductDetail(container, id) {
           <span>${product.name}</span>
         </div>
 
-        <div class="product-detail-grid reveal">
+        <div class="product-detail-grid">
           <div class="product-detail-image">
             <img src="${product.image}" alt="${product.name}">
           </div>
@@ -492,7 +515,7 @@ function renderProductDetail(container, id) {
               <p><strong>Minimum Order:</strong> ${product.moqNote}</p>
             </div>
 
-            <div class="quote-form-inline reveal">
+            <div class="quote-form-inline">
               <h4>Request a Quote</h4>
               <form onsubmit="addToQuoteFromDetail(event, '${product.id}')">
                 <div class="form-row">
@@ -583,7 +606,7 @@ function renderQuoteBasket(container) {
             </div>
           </div>
 
-          <div class="basket-summary reveal">
+          <div class="basket-summary">
             <h3>Quote Summary</h3>
             <div class="summary-row">
               <span>Products</span>
@@ -622,7 +645,7 @@ function renderRequestQuote(container) {
           <h1>Request a Quote</h1>
           <p>Fill in your details below. We will prepare your customised wholesale quote and respond within 24 hours.</p>
 
-          <div class="quote-form-card reveal">
+          <div class="quote-form-card">
             <div class="quote-items-preview">
               <div class="form-section-title">Products in Quote</div>
               ${items.map(item => `
@@ -709,7 +732,7 @@ function renderSuccess(container) {
   container.innerHTML = `
     <div class="success-page">
       <div class="container">
-        <div class="success-card reveal">
+        <div class="success-card">
           <div class="success-icon">${Icons.checkCircle}</div>
           <h1>Quote Request Submitted</h1>
           <p>Thank you, <strong>${lastQuote.customer.fullName}</strong>. Your quote request <strong>${lastQuote.id}</strong> has been received. You can also send it directly via WhatsApp for faster response.</p>
@@ -753,7 +776,7 @@ function renderAdmin(container) {
             </ul>
           </div>
 
-          <div class="admin-content reveal">
+          <div class="admin-content">
             <div class="stats-grid">
               <div class="stat-card reveal">
                 <div class="stat-card-value">${quotes.length}</div>
@@ -943,12 +966,15 @@ function renderHeader() {
     <header class="header" id="header">
       <div class="container header-inner">
         <a href="#/" class="logo">
-          <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-  <rect width="36" height="36" rx="8" fill="url(#logoGrad)"/>
-  <path d="M10 26V10h4l4 8 4-8h4v16h-3V15l-4 8h-2l-4-8v11h-3z" fill="white"/>
+          <svg class="logo-mark" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+  <circle cx="50" cy="50" r="46" stroke="url(#logoGold)" stroke-width="3" fill="none" stroke-dasharray="4 3"/>
+  <circle cx="50" cy="50" r="38" stroke="url(#logoGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <text x="50" y="55" text-anchor="middle" fill="url(#logoGold)" font-family="Georgia, serif" font-weight="700" font-size="28" letter-spacing="2">MGOLD</text>
+  <text x="50" y="72" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="400" font-size="7" letter-spacing="1.5" opacity="0.8">GT</text>
   <defs>
-    <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoGold" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
       <stop stop-color="#C9A227"/>
+      <stop offset="0.5" stop-color="#E8D5A3"/>
       <stop offset="1" stop-color="#A08020"/>
     </linearGradient>
   </defs>
@@ -964,6 +990,9 @@ function renderHeader() {
         </nav>
 
         <div class="header-actions">
+          <button class="btn-icon" onclick="toggleTheme()" aria-label="Toggle theme" id="theme-toggle" title="Toggle dark mode">
+            ${Icons.moon}
+          </button>
           <a href="#/quote-basket" class="btn-icon quote-badge" title="Quote Basket">
             ${Icons.cart}
             <span class="quote-count" style="display:${Store.getQuoteCount() > 0 ? 'flex' : 'none'}">${Store.getQuoteCount()}</span>
@@ -996,12 +1025,15 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="logo">
-              <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-  <rect width="36" height="36" rx="8" fill="url(#logoGrad)"/>
-  <path d="M10 26V10h4l4 8 4-8h4v16h-3V15l-4 8h-2l-4-8v11h-3z" fill="white"/>
+              <svg class="logo-mark" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+  <circle cx="50" cy="50" r="46" stroke="url(#logoGold)" stroke-width="3" fill="none" stroke-dasharray="4 3"/>
+  <circle cx="50" cy="50" r="38" stroke="url(#logoGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <text x="50" y="55" text-anchor="middle" fill="url(#logoGold)" font-family="Georgia, serif" font-weight="700" font-size="28" letter-spacing="2">MGOLD</text>
+  <text x="50" y="72" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="400" font-size="7" letter-spacing="1.5" opacity="0.8">GT</text>
   <defs>
-    <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoGold" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
       <stop stop-color="#C9A227"/>
+      <stop offset="0.5" stop-color="#E8D5A3"/>
       <stop offset="1" stop-color="#A08020"/>
     </linearGradient>
   </defs>
@@ -1050,11 +1082,37 @@ window.toggleMenu = function() {
   document.getElementById('mobile-menu').classList.toggle('open');
 };
 
+window.toggleTheme = function() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('mgold_theme', next);
+  updateThemeIcon(next);
+};
+
+function updateThemeIcon(theme) {
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.innerHTML = theme === 'dark' ? Icons.sun : Icons.moon;
+    btn.title = theme === 'dark' ? 'Toggle light mode' : 'Toggle dark mode';
+  }
+}
+
+function initTheme() {
+  const saved = localStorage.getItem('mgold_theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = saved || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+  updateThemeIcon(theme);
+}
+
 // ============================================
 // INITIALISATION
 // ============================================
 
 function init() {
+  initTheme();
   const app = document.getElementById('app');
   app.innerHTML = `
     ${renderHeader()}
