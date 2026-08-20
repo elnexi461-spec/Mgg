@@ -256,7 +256,7 @@ function renderHome(container) {
           Premium Wholesale Food & Beverages for UK Businesses
         </h1>
         <p class="reveal" style="animation-delay:0.2s">
-          MGOLD GT Ltd supplies restaurants, supermarkets, cash & carry outlets and corporate clients with quality edible oils, dairy, beverages and dry goods — sourced worldwide, delivered across the UK.
+          MGOLD GT Ltd supplies restaurants, supermarkets, cash & carry outlets and corporate clients with quality edible oils, dairy, beverages and dry goods - sourced worldwide, delivered across the UK.
         </p>
         <div class="hero-actions reveal" style="animation-delay:0.3s">
           <a href="#/products" class="btn btn-primary btn-lg">Browse Products ${Icons.arrowRight}</a>
@@ -563,7 +563,7 @@ function renderQuoteBasket(container) {
                   </div>
                   <div class="basket-item-info">
                     <h4>${item.product.name}</h4>
-                    <p>${item.packaging}${item.notes ? ' — ' + item.notes : ''}</p>
+                    <p>${item.packaging}${item.notes ? ' | ' + item.notes : ''}</p>
                     <div class="basket-item-qty">
                       <button class="qty-btn" onclick="updateQty('${item.id}', -1)">${Icons.minus}</button>
                       <span class="qty-value">${item.quantity}</span>
@@ -631,7 +631,7 @@ function renderRequestQuote(container) {
                   <div class="img-fallback" style="display:none;width:48px;height:48px;position:absolute;left:0;top:0"><span style="font-size:0.6rem">${item.product.name}</span></div>
                   <div class="quote-item-preview-info">
                     <h5>${item.product.name}</h5>
-                    <p>${item.packaging}${item.notes ? ' — ' + item.notes : ''}</p>
+                    <p>${item.packaging}${item.notes ? ' | ' + item.notes : ''}</p>
                   </div>
                   <span class="quote-item-preview-qty">× ${item.quantity}</span>
                 </div>
@@ -907,10 +907,10 @@ window.copyToClipboard = function() {
 
 function generateWhatsAppMessage(quote) {
   const items = quote.items.map(item => 
-    `• ${item.product.name} — ${item.packaging} — Qty: ${item.quantity}${item.notes ? ' (' + item.notes + ')' : ''}`
+    `• ${item.product.name} | ${item.packaging} | Qty: ${item.quantity}${item.notes ? ' (' + item.notes + ')' : ''}`
   ).join('\n');
 
-  return `*QUOTE REQUEST — ${quote.id}*
+  return `*QUOTE REQUEST - ${quote.id}*
 
 *Customer:* ${quote.customer.fullName}
 *Company:* ${quote.customer.company}
@@ -924,7 +924,7 @@ ${items}
 
 ${quote.customer.message ? '*Additional Message:*\n' + quote.customer.message : ''}
 
-—
+---
 Sent via MGOLD GT Ltd Wholesale Catalog`;
 }
 
@@ -943,7 +943,16 @@ function renderHeader() {
     <header class="header" id="header">
       <div class="container header-inner">
         <a href="#/" class="logo">
-          <div class="logo-mark">MG</div>
+          <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+  <rect width="36" height="36" rx="8" fill="url(#logoGrad)"/>
+  <path d="M10 26V10h4l4 8 4-8h4v16h-3V15l-4 8h-2l-4-8v11h-3z" fill="white"/>
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#A08020"/>
+    </linearGradient>
+  </defs>
+</svg>
           MGOLD <span>GT</span>
         </a>
 
@@ -987,7 +996,16 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="logo">
-              <div class="logo-mark">MG</div>
+              <svg class="logo-mark" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+  <rect width="36" height="36" rx="8" fill="url(#logoGrad)"/>
+  <path d="M10 26V10h4l4 8 4-8h4v16h-3V15l-4 8h-2l-4-8v11h-3z" fill="white"/>
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C9A227"/>
+      <stop offset="1" stop-color="#A08020"/>
+    </linearGradient>
+  </defs>
+</svg>
               MGOLD <span>GT</span>
             </div>
             <p>${COMPANY.description}</p>
