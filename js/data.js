@@ -25,7 +25,7 @@ const CATEGORIES = [
     slug: 'wholesale-oil',
     description: 'Premium edible and vegetable oils sourced from Ukraine, Malaysia and worldwide. Available in various packaging including 20L tins, jerry cans, and PET bottles.',
     icon: 'oilCan',
-    image: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80',
+    image: 'assets/images/products/vegetable-oil.jpg',
     productCount: 5
   },
   {
@@ -34,7 +34,7 @@ const CATEGORIES = [
     slug: 'wholesale-liquid',
     description: 'Beverages, dairy products and liquid food essentials for the UK wholesale market.',
     icon: 'bottleWater',
-    image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800&q=80',
+    image: 'assets/images/products/mineral-water.jpg',
     productCount: 4
   },
   {
@@ -43,7 +43,7 @@ const CATEGORIES = [
     slug: 'other-wholesale',
     description: 'Dry goods, spices, tea, sugar, salt and milk powder for restaurants and retailers.',
     icon: 'boxesStacked',
-    image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800&q=80',
+    image: 'assets/images/products/spices.jpg',
     productCount: 5
   }
 ];
@@ -73,7 +73,7 @@ In 2018, Ukraine and Russia together accounted for 53% of the world's production
       'Ideal for frying and cooking',
       'Available in custom labelling'
     ],
-    image: 'https://www.mgoldgt.com/wp-content/uploads/elementor/thumbs/6327482abd11270231d2ded2_2-pwx5u1obv8fegytzranho2c80rsybi3rvjp20k7xww.png',
+    image: 'assets/images/products/sunflower-oil.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'frying', 'cooking']
@@ -101,7 +101,7 @@ Rapeseed is extensively cultivated in Canada, France, Belgium, the United Kingdo
       'Low saturated fat',
       'Available in custom labelling'
     ],
-    image: 'https://www.mgoldgt.com/wp-content/uploads/elementor/thumbs/6327482a165b795de91aef52_1-p-500-pwx5tv3gje6e7p3jtpt3olzzv2pdtmdnin4nnmhp4g.png',
+    image: 'assets/images/products/canola-oil.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'rapeseed', 'cooking']
@@ -131,7 +131,7 @@ The biggest producers of palm oil are Indonesia, Malaysia, Thailand and Nigeria.
       'Widely used in food manufacturing',
       'Available in custom labelling'
     ],
-    image: 'https://www.mgoldgt.com/wp-content/uploads/elementor/thumbs/6327482a1c814d41db6d4591_3-pwx5tyutaqbji4y37rflyl1u8m6uoeskv5qlkqc4fk.png',
+    image: 'assets/images/products/palm-oil.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'palm-olein', 'manufacturing']
@@ -157,7 +157,7 @@ All products are available with custom MGOLD GT labelling upon request.`,
       'Suitable for high-heat frying',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: 'assets/images/products/vegetable-oil.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'cooking', 'frying']
@@ -183,7 +183,7 @@ All products are available with custom MGOLD GT labelling upon request.`,
       'Consistent supply',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&q=80',
+    image: 'assets/images/products/olive-oil.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for container pricing.',
     tags: ['edible-oil', 'olive', 'premium']
@@ -211,7 +211,7 @@ Available in various bottle sizes to meet your business requirements.`,
       'Custom labelling available',
       'Reliable supply chain'
     ],
-    image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80',
+    image: 'assets/images/products/mineral-water.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for bulk pricing.',
     tags: ['beverage', 'water', 'hospitality']
@@ -237,7 +237,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Food manufacturing grade',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600&q=80',
+    image: 'assets/images/products/condensed-milk.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for container pricing.',
     tags: ['dairy', 'condensed', 'desserts']
@@ -263,7 +263,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Food service grade',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&q=80',
+    image: 'assets/images/products/evaporated-milk.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for container pricing.',
     tags: ['dairy', 'evaporated', 'cooking']
@@ -289,7 +289,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Competitive wholesale pricing',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80',
+    image: 'assets/images/products/soft-drinks.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for mixed pallet options.',
     tags: ['beverage', 'soft-drinks', 'retail']
@@ -317,7 +317,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Consistent quality',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=600&q=80',
+    image: 'assets/images/products/milk-powder.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for bulk container pricing.',
     tags: ['dairy', 'powder', 'manufacturing']
@@ -343,7 +343,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Competitive wholesale pricing',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80',
+    image: 'assets/images/products/tea.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for variety mixes.',
     tags: ['beverage', 'tea', 'hospitality']
@@ -369,7 +369,7 @@ Available with custom MGOLD GT labelling and packaging upon request.`,
       'Suitable for manufacturing',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=600&q=80',
+    image: 'assets/images/products/spices.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for mixed spice pallets.',
     tags: ['spices', 'cooking', 'manufacturing']
@@ -395,7 +395,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Ideal for manufacturing',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&q=80',
+    image: 'assets/images/products/sugar.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for bulk container pricing.',
     tags: ['sugar', 'baking', 'manufacturing']
@@ -421,7 +421,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Essential for food service',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=600&q=80',
+    image: 'assets/images/products/salt.jpg',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for bulk pricing.',
     tags: ['salt', 'cooking', 'food-service']
