@@ -361,17 +361,13 @@ function renderHome(container) {
           <h2 style="color:white">Leadership</h2>
           <p style="color:rgba(255,255,255,0.7)">Meet the team behind MGOLD GT Ltd</p>
         </div>
-        <div style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;max-width:800px;margin:0 auto">
-          <div style="text-align:center">
-            <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:3px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,0.3)">
-              <img src="assets/images/md.jpg" alt="Riffat Zakaria" style="width:100%;height:100%;object-fit:cover;object-position:top center">
-            </div>
-            <h3 style="color:var(--gold);margin-bottom:0.25rem">Riffat Zakaria</h3>
-            <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:1rem">Managing Director</p>
-            <p style="color:rgba(255,255,255,0.8);line-height:1.7;font-size:0.95rem">
-              He is a Managing Director of a well-known established wholesale company MGOLD GT Ltd based in London, UK. He is also a Director of MGOLD General Trading LLC which is based in Dubai-UAE. Both the companies, in their respective areas, specialise in the wholesale of Edible oil, Vegetable oil, Sunflower oil, Olive oil, Mineral water, Condensed milk, Evaporated milk, Tea, Spices, Soft drinks, Milk powder, Sugar, Salt.
-            </p>
+        <div class="md-section">
+          <div class="md-portrait">
+            <img src="assets/images/md.jpg" alt="Riffat Zakaria">
           </div>
+          <h3>Riffat Zakaria</h3>
+          <p>Managing Director</p>
+          <p>He is a Managing Director of a well-known established wholesale company MGOLD GT Ltd based in London, UK. He is also a Director of MGOLD General Trading LLC which is based in Dubai-UAE. Both the companies, in their respective areas, specialise in the wholesale of Edible oil, Vegetable oil, Sunflower oil, Olive oil, Mineral water, Condensed milk, Evaporated milk, Tea, Spices, Soft drinks, Milk powder, Sugar, Salt.</p>
         </div>
       </div>
     </section>
