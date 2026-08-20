@@ -1942,8 +1942,14 @@ main {
 
 
 
-/* img-error fallback for product detail */
-.product-detail-image.img-error::before {
+/* ============================================
+ IMAGE FALLBACK & MD SECTION
+ ============================================ */
+
+/* Image error fallback */
+.product-image.img-error::before,
+.product-detail-image.img-error::before,
+.basket-item-image.img-error::before {
   content: attr(data-name);
   position: absolute;
   inset: 0;
@@ -1959,11 +1965,12 @@ main {
   z-index: 1;
 }
 
-[data-theme="dark"] .product-detail-image.img-error::before {
+[data-theme="dark"] .product-image.img-error::before,
+[data-theme="dark"] .product-detail-image.img-error::before,
+[data-theme="dark"] .basket-item-image.img-error::before {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: var(--text-muted);
 }
-
 
 /* MD Section */
 .md-section {
