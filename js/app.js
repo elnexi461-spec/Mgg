@@ -250,21 +250,21 @@ function renderHome(container) {
     <section class="hero">
       <div class="hero-pattern"></div>
       <div class="container hero-content">
-        <div class="hero-badge reveal">
+        <div class="hero-badge">
           <span class="dot"></span>
           <span>Trusted UK Wholesale Supplier</span>
         </div>
-        <h1 class="reveal" style="animation-delay:0.1s">
+        <h1 style="animation-delay:0.1s">
           Premium Wholesale Food & Beverages for UK Businesses
         </h1>
-        <p class="reveal" style="animation-delay:0.2s">
+        <p style="animation-delay:0.2s">
           MGOLD GT Ltd supplies restaurants, supermarkets, cash & carry outlets and corporate clients with quality edible oils, dairy, beverages and dry goods - sourced worldwide, delivered across the UK.
         </p>
-        <div class="hero-actions reveal" style="animation-delay:0.3s">
+        <div class="hero-actions">
           <a href="#/products" class="btn btn-primary btn-lg">Browse Products ${Icons.arrowRight}</a>
           <a href="#/quote-basket" class="btn btn-outline btn-lg">Request a Quote</a>
         </div>
-        <div class="hero-stats reveal" style="animation-delay:0.4s">
+        <div class="hero-stats">
           <div class="hero-stat">
             <div class="hero-stat-value">14+</div>
             <div class="hero-stat-label">Products</div>
@@ -283,13 +283,13 @@ function renderHome(container) {
 
     <section class="section">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header">
           <h2>Our Product Categories</h2>
           <p>Browse our wholesale range of oils, liquids and dry goods sourced from reliable suppliers worldwide.</p>
         </div>
         <div class="categories-grid">
           ${CATEGORIES.map(cat => `
-            <div class="category-card reveal" onclick="window.location.hash='#/category/${cat.slug}'">
+            <div class="category-card" onclick="window.location.hash='#/category/${cat.slug}'">
               <div class="category-image" style="background-image:url('${cat.image}')">
                 <div class="category-icon">${Icons[cat.icon] || Icons.package}</div>
               </div>
@@ -309,7 +309,7 @@ function renderHome(container) {
 
     <section class="section" style="background:var(--bg-warm)">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header">
           <h2>Why Choose MGOLD GT?</h2>
           <p>We are a trusted UK wholesaler with a global supply network and a commitment to quality.</p>
         </div>
@@ -320,7 +320,7 @@ function renderHome(container) {
             { title: 'UK Wide Delivery', desc: 'Based in Barking, London. We deliver to restaurants, supermarkets, cash & carry and corporate clients across the UK.', icon: 'mapPin' },
             { title: 'Halal & Kosher', desc: 'Our oil products are certified Halal and Kosher, meeting the dietary requirements of diverse UK customers.', icon: 'checkCircle' },
           ].map(item => `
-            <div class="product-card reveal" style="padding:1.5rem">
+            <div class="product-card" style="padding:1.5rem">
               <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--gold)0%,var(--gold-dark)100%);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:white;margin-bottom:1rem">
                 ${Icons[item.icon]}
               </div>
@@ -334,7 +334,7 @@ function renderHome(container) {
 
     <section class="section">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header">
           <h2>Featured Products</h2>
           <p>Our most requested wholesale items, available in bulk with custom packaging options.</p>
         </div>
@@ -356,7 +356,7 @@ function renderHome(container) {
         <div style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;max-width:800px;margin:0 auto">
           <div style="text-align:center">
             <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:3px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,0.3)">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Riffat Zakaria" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='var(--gold)'">
+              <img src="./md-photo.jpg" alt="Riffat Zakaria" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.parentElement.style.background='var(--gold)'">
             </div>
             <h3 style="color:var(--gold);margin-bottom:0.25rem">Riffat Zakaria</h3>
             <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:1rem">Managing Director</p>
@@ -431,7 +431,7 @@ function renderCategory(container, slug) {
 function renderProductCard(product) {
   const category = CATEGORIES.find(c => c.id === product.categoryId);
   return `
-    <div class="product-card reveal">
+    <div class="product-card">
       <div class="product-image">
         <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="img-fallback" style="display:none"><span>${product.name}</span></div>
@@ -579,7 +579,7 @@ function renderQuoteBasket(container) {
           <div>
             <div class="basket-list">
               ${items.map(item => `
-                <div class="basket-item reveal" data-id="${item.id}">
+                <div class="basket-item" data-id="${item.id}">
                   <div class="basket-item-image">
                     <img src="${item.product.image}" alt="${item.product.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                     <div class="img-fallback" style="display:none"><span>${item.product.name}</span></div>
@@ -778,19 +778,19 @@ function renderAdmin(container) {
 
           <div class="admin-content">
             <div class="stats-grid">
-              <div class="stat-card reveal">
+              <div class="stat-card">
                 <div class="stat-card-value">${quotes.length}</div>
                 <div class="stat-card-label">Total Quotes</div>
               </div>
-              <div class="stat-card reveal">
+              <div class="stat-card">
                 <div class="stat-card-value">${quotes.filter(q => q.status === 'pending').length}</div>
                 <div class="stat-card-label">Pending</div>
               </div>
-              <div class="stat-card reveal">
+              <div class="stat-card">
                 <div class="stat-card-value">${totalItems}</div>
                 <div class="stat-card-label">Items Quoted</div>
               </div>
-              <div class="stat-card reveal">
+              <div class="stat-card">
                 <div class="stat-card-value">${PRODUCTS.length}</div>
                 <div class="stat-card-label">Products</div>
               </div>
@@ -966,18 +966,11 @@ function renderHeader() {
     <header class="header" id="header">
       <div class="container header-inner">
         <a href="#/" class="logo">
-          <svg class="logo-mark" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-  <circle cx="50" cy="50" r="46" stroke="url(#logoGold)" stroke-width="3" fill="none" stroke-dasharray="4 3"/>
-  <circle cx="50" cy="50" r="38" stroke="url(#logoGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
-  <text x="50" y="55" text-anchor="middle" fill="url(#logoGold)" font-family="Georgia, serif" font-weight="700" font-size="28" letter-spacing="2">MGOLD</text>
-  <text x="50" y="72" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="400" font-size="7" letter-spacing="1.5" opacity="0.8">GT</text>
-  <defs>
-    <linearGradient id="logoGold" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#C9A227"/>
-      <stop offset="0.5" stop-color="#E8D5A3"/>
-      <stop offset="1" stop-color="#A08020"/>
-    </linearGradient>
-  </defs>
+          <svg class="logo-mark" width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+  <circle cx="100" cy="100" r="90" stroke="#C9A227" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
+  <circle cx="100" cy="100" r="78" stroke="#C9A227" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="100" y="108" text-anchor="middle" fill="#C9A227" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="42" letter-spacing="3">MGOLD</text>
+  <text x="100" y="132" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="400" font-size="14" letter-spacing="6" opacity="0.9">GT</text>
 </svg>
           MGOLD <span>GT</span>
         </a>
@@ -1025,18 +1018,11 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="logo">
-              <svg class="logo-mark" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
-  <circle cx="50" cy="50" r="46" stroke="url(#logoGold)" stroke-width="3" fill="none" stroke-dasharray="4 3"/>
-  <circle cx="50" cy="50" r="38" stroke="url(#logoGold)" stroke-width="1.5" fill="none" opacity="0.6"/>
-  <text x="50" y="55" text-anchor="middle" fill="url(#logoGold)" font-family="Georgia, serif" font-weight="700" font-size="28" letter-spacing="2">MGOLD</text>
-  <text x="50" y="72" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="400" font-size="7" letter-spacing="1.5" opacity="0.8">GT</text>
-  <defs>
-    <linearGradient id="logoGold" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#C9A227"/>
-      <stop offset="0.5" stop-color="#E8D5A3"/>
-      <stop offset="1" stop-color="#A08020"/>
-    </linearGradient>
-  </defs>
+              <svg class="logo-mark" width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+  <circle cx="100" cy="100" r="90" stroke="#C9A227" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
+  <circle cx="100" cy="100" r="78" stroke="#C9A227" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="100" y="108" text-anchor="middle" fill="#C9A227" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="42" letter-spacing="3">MGOLD</text>
+  <text x="100" y="132" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="400" font-size="14" letter-spacing="6" opacity="0.9">GT</text>
 </svg>
               MGOLD <span>GT</span>
             </div>
