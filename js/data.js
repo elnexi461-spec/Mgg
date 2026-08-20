@@ -25,7 +25,7 @@ const CATEGORIES = [
     slug: 'wholesale-oil',
     description: 'Premium edible and vegetable oils sourced from Ukraine, Malaysia and worldwide. Available in various packaging including 20L tins, jerry cans, and PET bottles.',
     icon: 'oilCan',
-    image: 'https://images.unsplash.com/photo-1474979266404-7cadd259c308?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80',
     productCount: 5
   },
   {
@@ -73,7 +73,7 @@ In 2018, Ukraine and Russia together accounted for 53% of the world's production
       'Ideal for frying and cooking',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=600&q=80',
+    image: 'https://www.mgoldgt.com/wp-content/uploads/elementor/thumbs/6327482abd11270231d2ded2_2-pwx5u1obv8fegytzranho2c80rsybi3rvjp20k7xww.png',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'frying', 'cooking']
@@ -101,7 +101,7 @@ Rapeseed is extensively cultivated in Canada, France, Belgium, the United Kingdo
       'Low saturated fat',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80',
+    image: 'https://www.mgoldgt.com/wp-content/uploads/elementor/thumbs/6327482a165b795de91aef52_1-p-500-pwx5tv3gje6e7p3jtpt3olzzv2pdtmdnin4nnmhp4g.png',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'rapeseed', 'cooking']
@@ -131,7 +131,7 @@ The biggest producers of palm oil are Indonesia, Malaysia, Thailand and Nigeria.
       'Widely used in food manufacturing',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: 'https://www.mgoldgt.com/wp-content/uploads/elementor/thumbs/6327482a1c814d41db6d4591_3-pwx5tyutaqbji4y37rflyl1u8m6uoeskv5qlkqc4fk.png',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'palm-olein', 'manufacturing']
@@ -157,7 +157,7 @@ All products are available with custom MGOLD GT labelling upon request.`,
       'Suitable for high-heat frying',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1474979266404-7cadd259c308?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Bulk container orders available (3-5 containers per month).',
     tags: ['edible-oil', 'cooking', 'frying']
@@ -183,7 +183,7 @@ All products are available with custom MGOLD GT labelling upon request.`,
       'Consistent supply',
       'Available in custom labelling'
     ],
-    image: 'https://images.unsplash.com/photo-1474979266404-7cadd259c308?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&q=80',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for container pricing.',
     tags: ['edible-oil', 'olive', 'premium']
@@ -395,7 +395,7 @@ Available with custom MGOLD GT labelling upon request.`,
       'Ideal for manufacturing',
       'Custom labelling available'
     ],
-    image: 'https://images.unsplash.com/photo-1622484211148-2566c6e8f0e3?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&q=80',
     minOrder: '1 pallet',
     moqNote: 'Minimum order: 1 pallet. Contact us for bulk container pricing.',
     tags: ['sugar', 'baking', 'manufacturing']

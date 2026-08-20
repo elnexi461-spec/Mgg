@@ -1,7 +1,7 @@
 /* ============================================
-   MGOLD GT Ltd - B2B Wholesale Catalog
-   Mobile-First, Production-Quality Styles
-   ============================================ */
+ MGOLD GT Ltd - B2B Wholesale Catalog
+ Mobile-First, Production-Quality Styles
+ ============================================ */
 
 /* CSS Variables */
 :root {
@@ -649,6 +649,54 @@ p {
   color: white;
 }
 
+/* Feature Cards */
+.feature-card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .feature-card {
+  background: var(--navy-light);
+  border-color: var(--border);
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-light);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--bg-cool);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gold-dark);
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
 /* Product Cards */
 .products-grid {
   display: grid;
@@ -696,6 +744,7 @@ p {
   background-position: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
 }
 
 .product-image img {
@@ -716,6 +765,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  z-index: 2;
 }
 
 .badge {
@@ -833,6 +883,7 @@ p {
   overflow: hidden;
   background: var(--bg-warm);
   aspect-ratio: 4/3;
+  position: relative;
 }
 
 .product-detail-image img {
@@ -1110,6 +1161,7 @@ textarea.form-control {
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg-warm);
+  position: relative;
 }
 
 @media (min-width: 640px) {
@@ -1891,24 +1943,14 @@ main {
 }
 
 /* ============================================
-   IMAGE FALLBACK
-   ============================================ */
+ IMAGE FALLBACK & MD SECTION
+ ============================================ */
 
-.product-image,
-.product-detail-image,
-.basket-item-image {
-  position: relative;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
-}
-
-.product-image img,
-.product-detail-image img,
-.basket-item-image img {
-  position: relative;
-  z-index: 1;
-}
-
-.img-fallback {
+/* Image error fallback - shows product name when image fails */
+.product-image.img-error::before,
+.product-detail-image.img-error::before,
+.basket-item-image.img-error::before {
+  content: attr(data-name);
   position: absolute;
   inset: 0;
   display: flex;
@@ -1916,25 +1958,60 @@ main {
   justify-content: center;
   background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
   padding: 1rem;
-  z-index: 0;
-}
-
-.img-fallback::before {
-  content: '';
-  width: 40px;
-  height: 40px;
-  background: var(--gold-light);
-  border-radius: 50%;
-  position: absolute;
-  opacity: 0.3;
-}
-
-.img-fallback span {
-  position: relative;
   z-index: 1;
 }
 
+[data-theme="dark"] .product-image.img-error::before,
+[data-theme="dark"] .product-detail-image.img-error::before,
+[data-theme="dark"] .basket-item-image.img-error::before {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: var(--text-muted);
+}
+
+/* MD Section */
+.md-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.md-portrait {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 4px solid var(--gold-light);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-cool);
+}
+
+.md-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (min-width: 768px) {
+  .md-portrait {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.md-section h3 {
+  margin-bottom: 0.25rem;
+  color: var(--navy);
+}
+
+.md-section > p:last-child {
+  max-width: 520px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
