@@ -248,21 +248,21 @@ function renderHome(container) {
     <section class="hero">
       <div class="hero-pattern"></div>
       <div class="container hero-content">
-        <div class="hero-badge fade-in">
+        <div class="hero-badge reveal">
           <span class="dot"></span>
           <span>Trusted UK Wholesale Supplier</span>
         </div>
-        <h1 class="fade-in" style="animation-delay:0.1s">
+        <h1 class="reveal" style="animation-delay:0.1s">
           Premium Wholesale Food & Beverages for UK Businesses
         </h1>
-        <p class="fade-in" style="animation-delay:0.2s">
+        <p class="reveal" style="animation-delay:0.2s">
           MGOLD GT Ltd supplies restaurants, supermarkets, cash & carry outlets and corporate clients with quality edible oils, dairy, beverages and dry goods — sourced worldwide, delivered across the UK.
         </p>
-        <div class="hero-actions fade-in" style="animation-delay:0.3s">
+        <div class="hero-actions reveal" style="animation-delay:0.3s">
           <a href="#/products" class="btn btn-primary btn-lg">Browse Products ${Icons.arrowRight}</a>
           <a href="#/quote-basket" class="btn btn-outline btn-lg">Request a Quote</a>
         </div>
-        <div class="hero-stats fade-in" style="animation-delay:0.4s">
+        <div class="hero-stats reveal" style="animation-delay:0.4s">
           <div class="hero-stat">
             <div class="hero-stat-value">14+</div>
             <div class="hero-stat-label">Products</div>
@@ -281,13 +281,13 @@ function renderHome(container) {
 
     <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <h2>Our Product Categories</h2>
           <p>Browse our wholesale range of oils, liquids and dry goods sourced from reliable suppliers worldwide.</p>
         </div>
         <div class="categories-grid">
           ${CATEGORIES.map(cat => `
-            <div class="category-card" onclick="window.location.hash='#/category/${cat.slug}'">
+            <div class="category-card reveal" onclick="window.location.hash='#/category/${cat.slug}'">
               <div class="category-image" style="background-image:url('${cat.image}')">
                 <div class="category-icon">${Icons[cat.icon] || Icons.package}</div>
               </div>
@@ -307,7 +307,7 @@ function renderHome(container) {
 
     <section class="section" style="background:var(--bg-warm)">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <h2>Why Choose MGOLD GT?</h2>
           <p>We are a trusted UK wholesaler with a global supply network and a commitment to quality.</p>
         </div>
@@ -318,7 +318,7 @@ function renderHome(container) {
             { title: 'UK Wide Delivery', desc: 'Based in Barking, London. We deliver to restaurants, supermarkets, cash & carry and corporate clients across the UK.', icon: 'mapPin' },
             { title: 'Halal & Kosher', desc: 'Our oil products are certified Halal and Kosher, meeting the dietary requirements of diverse UK customers.', icon: 'checkCircle' },
           ].map(item => `
-            <div class="product-card" style="padding:1.5rem">
+            <div class="product-card reveal" style="padding:1.5rem">
               <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--gold)0%,var(--gold-dark)100%);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:white;margin-bottom:1rem">
                 ${Icons[item.icon]}
               </div>
@@ -332,7 +332,7 @@ function renderHome(container) {
 
     <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <h2>Featured Products</h2>
           <p>Our most requested wholesale items, available in bulk with custom packaging options.</p>
         </div>
@@ -408,9 +408,10 @@ function renderCategory(container, slug) {
 function renderProductCard(product) {
   const category = CATEGORIES.find(c => c.id === product.categoryId);
   return `
-    <div class="product-card fade-in">
+    <div class="product-card reveal">
       <div class="product-image">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-fallback" style="display:none"><span>${product.name}</span></div>
         <div class="product-badges">
           ${product.certifications.map(c => `<span class="badge badge-gold">${c}</span>`).join('')}
           <span class="badge badge-outline">${product.origin}</span>
@@ -454,7 +455,7 @@ function renderProductDetail(container, id) {
           <span>${product.name}</span>
         </div>
 
-        <div class="product-detail-grid">
+        <div class="product-detail-grid reveal">
           <div class="product-detail-image">
             <img src="${product.image}" alt="${product.name}">
           </div>
@@ -491,7 +492,7 @@ function renderProductDetail(container, id) {
               <p><strong>Minimum Order:</strong> ${product.moqNote}</p>
             </div>
 
-            <div class="quote-form-inline">
+            <div class="quote-form-inline reveal">
               <h4>Request a Quote</h4>
               <form onsubmit="addToQuoteFromDetail(event, '${product.id}')">
                 <div class="form-row">
@@ -555,9 +556,10 @@ function renderQuoteBasket(container) {
           <div>
             <div class="basket-list">
               ${items.map(item => `
-                <div class="basket-item" data-id="${item.id}">
+                <div class="basket-item reveal" data-id="${item.id}">
                   <div class="basket-item-image">
-                    <img src="${item.product.image}" alt="${item.product.name}">
+                    <img src="${item.product.image}" alt="${item.product.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="img-fallback" style="display:none"><span>${item.product.name}</span></div>
                   </div>
                   <div class="basket-item-info">
                     <h4>${item.product.name}</h4>
@@ -581,7 +583,7 @@ function renderQuoteBasket(container) {
             </div>
           </div>
 
-          <div class="basket-summary">
+          <div class="basket-summary reveal">
             <h3>Quote Summary</h3>
             <div class="summary-row">
               <span>Products</span>
@@ -620,12 +622,13 @@ function renderRequestQuote(container) {
           <h1>Request a Quote</h1>
           <p>Fill in your details below. We will prepare your customised wholesale quote and respond within 24 hours.</p>
 
-          <div class="quote-form-card">
+          <div class="quote-form-card reveal">
             <div class="quote-items-preview">
               <div class="form-section-title">Products in Quote</div>
               ${items.map(item => `
                 <div class="quote-item-preview">
-                  <img src="${item.product.image}" alt="${item.product.name}">
+                  <img src="${item.product.image}" alt="${item.product.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="position:relative;z-index:1">
+                  <div class="img-fallback" style="display:none;width:48px;height:48px;position:absolute;left:0;top:0"><span style="font-size:0.6rem">${item.product.name}</span></div>
                   <div class="quote-item-preview-info">
                     <h5>${item.product.name}</h5>
                     <p>${item.packaging}${item.notes ? ' — ' + item.notes : ''}</p>
@@ -706,7 +709,7 @@ function renderSuccess(container) {
   container.innerHTML = `
     <div class="success-page">
       <div class="container">
-        <div class="success-card">
+        <div class="success-card reveal">
           <div class="success-icon">${Icons.checkCircle}</div>
           <h1>Quote Request Submitted</h1>
           <p>Thank you, <strong>${lastQuote.customer.fullName}</strong>. Your quote request <strong>${lastQuote.id}</strong> has been received. You can also send it directly via WhatsApp for faster response.</p>
@@ -750,21 +753,21 @@ function renderAdmin(container) {
             </ul>
           </div>
 
-          <div class="admin-content">
+          <div class="admin-content reveal">
             <div class="stats-grid">
-              <div class="stat-card">
+              <div class="stat-card reveal">
                 <div class="stat-card-value">${quotes.length}</div>
                 <div class="stat-card-label">Total Quotes</div>
               </div>
-              <div class="stat-card">
+              <div class="stat-card reveal">
                 <div class="stat-card-value">${quotes.filter(q => q.status === 'pending').length}</div>
                 <div class="stat-card-label">Pending</div>
               </div>
-              <div class="stat-card">
+              <div class="stat-card reveal">
                 <div class="stat-card-value">${totalItems}</div>
                 <div class="stat-card-label">Items Quoted</div>
               </div>
-              <div class="stat-card">
+              <div class="stat-card reveal">
                 <div class="stat-card-value">${PRODUCTS.length}</div>
                 <div class="stat-card-label">Products</div>
               </div>
