@@ -692,7 +692,7 @@ p {
 
 .product-image {
   height: 200px;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -700,9 +700,8 @@ p {
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.5s ease;
-  padding: 0.75rem;
 }
 
 .product-card:hover .product-image img {
@@ -831,15 +830,14 @@ p {
 .product-detail-image {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
+  background: #ffffff;
   aspect-ratio: 4/3;
 }
 
 .product-detail-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 1rem;
+  object-fit: cover;
 }
 
 .product-detail-info h1 {
@@ -1110,7 +1108,7 @@ textarea.form-control {
   height: 80px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
+  background: #ffffff;
 }
 
 @media (min-width: 640px) {
@@ -1123,8 +1121,7 @@ textarea.form-control {
 .basket-item-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 0.25rem;
+  object-fit: cover;
 }
 
 .basket-item-info h4 {
@@ -1956,7 +1953,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #faf8f5 0%, #f0ece4 100%);
+  background: #ffffff;
   color: var(--text-muted);
   font-size: 0.85rem;
   font-weight: 600;
@@ -1968,7 +1965,7 @@ main {
 [data-theme="dark"] .product-image.img-error::before,
 [data-theme="dark"] .product-detail-image.img-error::before,
 [data-theme="dark"] .basket-item-image.img-error::before {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: #1e293b;
   color: var(--text-muted);
 }
 
@@ -1994,7 +1991,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
 }
 
 @media (min-width: 768px) {
